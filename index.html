@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desa Gunung Keramat</title>
+    <link rel="icon" type="image/png" href="images/lampura.png"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a class="logoGK" href="index.html">Gunung Keramat</a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="">BERANDA</a></li>
+                <li><a href="profil.html">PROFIL DESA</a></li>
+                <li><a href="lembaga.html">LEMBAGA</a></li>
+                <li><a href="informasi.html">INFORMASI</a></li>
+
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+<div class="text-box">
+    <h1>Website Profil<br>Desa Gunung Kramat</h1>
+    <p>Sumber informasi tentang Desa Gunung Keramat</p>
+    <a href="https://gunungkeramat.kablampura.id/" target="_blank" class="hero-btn">Kunjungi Kami</a>
+</div>
+</section>
+
+<!-- SEJARAH DESA -->
+
+<section class="profilDesa fade-in">
+    
+    <div class="head">
+
+        <div class="fotoKades fade-in">
+            <img src="images/kades.jpg" alt="">
+            <h2>Kardi Widodo</h2>
+            <h3>Kepala Desa Gunung Keramat</h3>
+        </div>
+
+        <div class="sambutan fade-in">
+            <p>Website ini merupakan platform daring yang bertujuan untuk mentransformasi Desa Gunung Keramat, Kecamatan Abung Semuli, Kabupaten Lampung Utara menjadi desa yang memanfaatkan teknologi informasi dan komunikasi secara optimal. Situs ini mengintegrasikan berbagai aspek penting desa ke dalam sistem online, termasuk keterbukaan informasi publik, pelayanan publik, dan kegiatan perekonomian. Tujuannya adalah untuk mewujudkan Desa Gunung Keramat sebagai desa wisata yang berkelanjutan, adaptif terhadap perubahan iklim, serta mandiri secara ekonomi.</p>
+        </div>
+        </div>
+    </div>    
+</section>
+
+
+
+
+<!-- GALERI -->
+
+<section id="galeri fade-in">
+    <div class="galeri-box">
+        <h1>Galeri Desa</h1>
+        <p>Desa Gunung Keramat, Kec. Abung Semuli, Kab. Lampung Utara, Lampung</p>
+    </div>
+</section>
+<div class="container fade-in">
+    <div class="image-container">
+        <img src="images/galeri1.jpg" alt="">
+        <img src="images/sunset.jpg" alt="">
+        <img src="images/kkn1 (1).jpg" alt="">
+        <img src="images/jembatan.jpg" alt="">
+        <img src="images/gapura.jpg" alt="">
+        <img src="images/kkn1 (3).jpg" alt="">
+        <img src="images/kkn1 (4).jpg" alt="">
+        <img src="images/bts.jpg" alt="">
+    </div>    
+</div>
+
+
+<!-- LOCATION -->
+<section class="lokasi fade-in">
+    <div class="box">
+        <h1>Lokasi Desa</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum odit sint!</p>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15904.375025060408!2d105.10471654999999!3d-4.753734500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3f52384f593651%3A0xabf7d4a266732f15!2sGunung%20Kramat%2C%20Abung%20Semuli%2C%20North%20Lampung%20Regency%2C%20Lampung!5e0!3m2!1sen!2sid!4v1736053404321!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        
+    </iframe>
+
+</section>
+
+<!-- JAVA SCRIPT -->
+<script>
+
+var navLinks = document.getElementById('navLinks');
+
+function showMenu() {
+    if (navLinks) {
+        navLinks.style.right = "0"; // Move the menu into view
+    } else {
+        console.error("Element with ID 'navLinks' not found");
+    }
+}
+
+function hideMenu() {
+    if (navLinks) {
+        navLinks.style.right = "-200px"; // Hide the menu off-screen
+    } else {
+        console.error("Element with ID 'navLinks' not found");
+    }
+}
+
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentLocation = window.location.pathname.split("/").pop(); // Ambil nama file saat ini
+        let navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentLocation) {
+                link.classList.add("active"); // Tambahkan class 'active' jika sesuai dengan halaman saat ini
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show"); // Tambahkan class 'show' saat elemen terlihat
+                } else {
+                    entry.target.classList.remove("show"); // Hapus class 'show' saat elemen keluar dari viewport
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll(".fade-in").forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+
+
+
+
+</body>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section logo">
+            <img src="images/lampura.png" alt="Logo Desa" class="logo-img">
+            <h2>Lampung Utara</h2>
+        </div>
+
+
+        <div class="footer-section location">
+            <h3>LOKASI</h3>
+            <p>Desa Gunung Keramat, Kecamatan Abung Semuli <br>Kabupaten Lampung Utara <br>Provinsi Lampung</p>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>KONTAK KAMI</h3>
+            <p>📱 : 0858-4117-4327</p>
+            <p>✉️ : <a href="mailto:email@example.com">email@example.com</a></p>
+            <p>📞 : 0858-4117-4327</p>
+        </div>
+
+        <div class="footer-section social-media">
+            <h3>IKUTI KAMI</h3>
+            <p><a href="https://www.instagram.com/gunungkeramat_desa/" target="_blank"><img src="images/Instagram-logo.png" alt="Instagram" width="24"></a></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Copyright 2025 © All Rights Reserved &nbsp; <strong>Reference:</strong> <a href="https://digitaldesa.id/" target="_blank" rel="noopener noreferrer">🔗 DIGIDES</a> &nbsp; KKN Universitas Lampung 2025</p>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desa Gunung Keramat</title>
+    <link rel="icon" type="image/png" href="images/lampura.png"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="headerInfografis">
+        <nav>
+            <a class="logoGK" href="index.html">Gunung Keramat</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">BERANDA</a></li>
+                    <li><a href="profil.html">PROFIL DESA</a></li>
+                    <li><a href="lembaga.html">LEMBAGA</a></li>
+                    <li><a href="informasi.html">INFORMASI</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+
+    <section class="infografis fade-in">
+        <div class="container fade-in">
+            <div class="container">
+                <div class="card">
+                    <img src="images/tp-pkk.png" alt="PKK Desa" class="logo">
+                    <h2>PKK Desa</h2>
+                    
+                    <p>PKK Desa adalah organisasi yang berfokus pada pemberdayaan perempuan dan kesejahteraan keluarga di desa.</p>
+                </div>
+        
+                <div class="card">
+                    <img src="images/karang-taruna.png" alt="Karang Taruna" class="logo">
+                    <h2>Karang Taruna</h2>
+                    
+                    <p>Karang Taruna merupakan wadah organisasi kepemudaan yang bergerak dalam bidang sosial, budaya, dan kepemimpinan.</p>
+                </div>
+        
+                <div class="card">
+                    <img src="images/bpd.png" alt="BPD" class="logo">
+                    <h2>BPD</h2>
+                    
+                    <p>Badan Permusyawaratan Desa (BPD) berperan sebagai lembaga legislatif desa yang mengawasi jalannya pemerintahan desa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- JAVA SCRIPT -->
+<script>
+
+    var navLinks = document.getElementById('navLinks');
+    
+    function showMenu() {
+        if (navLinks) {
+            navLinks.style.right = "0"; // Move the menu into view
+        } else {
+            console.error("Element with ID 'navLinks' not found");
+        }
+    }
+    
+    function hideMenu() {
+        if (navLinks) {
+            navLinks.style.right = "-200px"; // Hide the menu off-screen
+        } else {
+            console.error("Element with ID 'navLinks' not found");
+        }
+    }
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show"); // Tambahkan class 'show' saat elemen terlihat
+                } else {
+                    entry.target.classList.remove("show"); // Hapus class 'show' saat elemen keluar dari viewport
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll(".fade-in").forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+
+</body>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section logo">
+            <img src="images/lampura.png" alt="Logo Desa" class="logo-img">
+            <h2>Lampung Utara</h2>
+        </div>
+
+
+        <div class="footer-section location">
+            <h3>LOKASI</h3>
+            <p>Desa Gunung Keramat, Kecamatan Abung Semuli <br>Kabupaten Lampung Utara <br>Provinsi Lampung</p>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>KONTAK KAMI</h3>
+            <p>📱 : 0858-4117-4327</p>
+            <p>✉️ : <a href="mailto:email@example.com">email@example.com</a></p>
+            <p>📞 : 0858-4117-4327</p>
+        </div>
+
+        <div class="footer-section social-media">
+            <h3>IKUTI KAMI</h3>
+            <p><a href="https://www.instagram.com/gunungkeramat_desa/" target="_blank"><img src="images/Instagram-logo.png" alt="Instagram" width="24"></a></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Copyright 2025 © All Rights Reserved &nbsp; <strong>Reference:</strong> <a href="https://digitaldesa.id/" target="_blank" rel="noopener noreferrer">🔗 DIGIDES</a> &nbsp; KKN Universitas Lampung 2025</p>
+    </div>
+</footer>
+
+</html>
